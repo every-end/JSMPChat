@@ -151,7 +151,7 @@ async def nuke(ctx):
 # !doxx command
 @bot.command()
 async def doxx(ctx):
-    messages = ["Bypassing firewall...", "Disabling Antivirus...", "Accessing personal information...", "Done! IP: 110.154.224.80"]
+    messages = ["Bypassing firewall...", "Disabling Antivirus...", "Accessing personal information...", "Done! User has been captured!"]
 
     message = await ctx.send(messages[0])
 
