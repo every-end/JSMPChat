@@ -4,7 +4,7 @@ import random
 import os
 from discord.ext import commands
 
-# JSMP Bot version 0.61.0
+# JSMP Bot version 0.61.1
 
 from dotenv import load_dotenv
 
@@ -33,7 +33,7 @@ async def on_ready():
     # Bot status
     await bot.change_presence(
         status=discord.Status.online,
-        activity=discord.Game("!commandlist | JSMP Bot version 0.61.0")
+        activity=discord.Game("!commandlist | JSMP Bot version 0.61.1")
     )
 
     print(f"Bot is online: {bot.user}")
