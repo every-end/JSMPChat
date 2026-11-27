@@ -52,4 +52,4 @@ python JSMPChat.py
 - Visual Studio Code
 ---
 
-**Made with Python ❤️**
+**Made by Every end using Python**
