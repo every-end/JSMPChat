@@ -274,11 +274,6 @@ async def commandlist(ctx):
 @bot.command()
 async def owner(ctx):
     await ctx.send("WARNING, SOMEONE HAS ATTEMPTED TO GET OWNER IN THIS SERVER. SENDING A DM TO JUPI 🚨")
-
-    user = discord.utils.get(bot.get_all_members(), name="jupiterian07")
-
-    if user:
-        await user.send(f"🚨 Someone attempted to get owner in Jupiterian Community using the !owner command! I recommend checking your server.")
         
 # faction command
 @bot.command()
