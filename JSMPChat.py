@@ -30,7 +30,7 @@ startup_message_sent = False
 async def on_ready():
     global startup_message_sent
 
-    # Set bot status
+    # Bot status
     await bot.change_presence(
         status=discord.Status.online,
         activity=discord.Game("!commandlist | JSMP Bot version 0.60.2")
