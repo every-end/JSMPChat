@@ -13,7 +13,7 @@ A Python-based Discord bot designed for Jupiterian Community, with minecraft smp
 1. Clone this repository:
 
    ```bash
-   git clone YOUR_REPOSITORY_URL
+   git https://github.com/every-end/JSMPChat
    ```
 
 2. Enter the project folder:
