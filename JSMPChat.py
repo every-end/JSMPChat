@@ -4,8 +4,7 @@ import random
 import os
 from discord.ext import commands
 
-# JSMP Bot version 0.61.1
-
+# JSMP Bot version 0.65.0
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -33,7 +32,7 @@ async def on_ready():
     # Bot status
     await bot.change_presence(
         status=discord.Status.online,
-        activity=discord.Game("!commandlist | JSMP Bot version 0.61.1")
+        activity=discord.Game("!commandlist | JSMP Bot version 0.65.0")
     )
 
     print(f"Bot is online: {bot.user}")
@@ -267,6 +266,18 @@ async def commandlist(ctx):
         value="Flips a coin.",
          inline=False
     )
+
+    embed.add_field(
+          name="!ban <username>",
+         value="Bans a member. (joke command)",
+          inline=False
+    )
+
+    embed.add_field(
+          name="!eliminate <username>",
+         value="Sends a member to the shadow realm. (joke command)",
+          inline=False
+    )
     
     await ctx.send(embed=embed)
 
@@ -274,7 +285,31 @@ async def commandlist(ctx):
 @bot.command()
 async def owner(ctx):
     await ctx.send("WARNING, SOMEONE HAS ATTEMPTED TO GET OWNER IN THIS SERVER. SENDING A DM TO JUPI 🚨")
-        
+
+# !ban command
+@bot.command()
+async def ban(ctx: commands.Context, target: str | None = None, *, reason: str | None = None):
+    if target is None:
+        await ctx.send("Who am I supposed to ban? Try `!ban @username` or `!ban username`.")
+        return
+
+    msg = f"{target} has been banned!"
+    if reason is not None:
+        msg += f" ({reason})"
+    await ctx.send(msg)
+
+# !eliminate command
+@bot.command()
+async def eliminate(ctx: commands.Context, target: str | None = None, *, reason: str | None = None):
+    if target is None:
+        await ctx.send("Who am I supposed to eliminate? Try `!eliminate @username` or `!eliminate username`.")
+        return
+
+    msg = f"{target} has been eliminated and now they are in the shadow realm!"
+    if reason is not None:
+        msg += f" ({reason})"
+    await ctx.send(msg)
+    
 # faction command
 @bot.command()
 async def faction(ctx, *, name=None):
